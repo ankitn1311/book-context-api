@@ -6,13 +6,13 @@ const Navbar = () => {
     return books.length > 0 ? (
         <nav>
             <h1>My Book App</h1>
-            <h5>There are {books.length} books</h5>
+            <h5>{books.length} books to read</h5>
         </nav>
     ) : (
             <nav>
                 <h1>My Book App</h1>
                 <div>
-                    <p style={{ textAlign: 'center' }}>There are books to read...just enjoy :)</p>
+                    <p style={{ textAlign: 'center' }}>No books to read ... just enjoy :)</p>
                 </div>
             </nav>
         )
