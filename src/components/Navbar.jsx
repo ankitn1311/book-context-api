@@ -6,7 +6,7 @@ const Navbar = () => {
     return books.length > 0 ? (
         <nav>
             <h1>My Book App</h1>
-            <h5>{books.length} books to read</h5>
+            <h5>{books.length > 1 ? 'books' : 'book'} to read</h5>
         </nav>
     ) : (
             <nav>
