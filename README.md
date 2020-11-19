@@ -5,3 +5,4 @@
 ## Technologies used
 * React with context-api
 * Material-UI
+* localStorage
