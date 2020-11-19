@@ -13,7 +13,7 @@ function BookDetails({ books }) {
                         <ListItemText primary={book.title} secondary={book.author} />
                         <ListItemSecondaryAction>
                             <IconButton edge="end" aria-label="delete" onClick={() => deleteBook(book.id)}>
-                                <DeleteIcon />
+                                <DeleteIcon color="secondary" />
                             </IconButton>
                         </ListItemSecondaryAction>
                     </ListItem>

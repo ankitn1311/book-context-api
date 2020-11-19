@@ -1,16 +1,19 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
 export const BookContext = createContext();
 
 const BookContextProvider = (props) => {
-  const [books, setBooks] = useState([
-    {
-      id: uuidv4(),
-      title: "Harry Potter",
-      author: "J. K. Rowling",
-    },
-  ]);
+  const [books, setBooks] = useState([]);
+
+  useEffect(() => {
+    const localData = localStorage.getItem("books");
+    return localData ? setBooks(JSON.parse(localData)) : [];
+  }, []);
+
+  useEffect(() => {
+    localStorage.setItem("books", JSON.stringify(books));
+  }, [books]);
 
   const addBook = (title, author) => {
     const newBook = { id: uuidv4(), title, author };
