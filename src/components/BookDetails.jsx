@@ -1,5 +1,7 @@
+import { IconButton, ListItem, ListItemSecondaryAction, ListItemText } from '@material-ui/core';
 import React, { useContext } from 'react'
 import { BookContext } from '../contexts/BookContext';
+import { Delete as DeleteIcon } from '@material-ui/icons';
 
 function BookDetails({ books }) {
     const { deleteBook } = useContext(BookContext);
@@ -7,14 +9,17 @@ function BookDetails({ books }) {
         <div>
             {books.map(book => {
                 return (
-                    <li key={book.id}
-                        onClick={() => deleteBook(book.id)}>
-                        <div className="title">{book.title}</div>
-                        <div className="author">{book.author}</div>
-                    </li>
+                    <ListItem key={book.id}>
+                        <ListItemText primary={book.title} secondary={book.author} />
+                        <ListItemSecondaryAction>
+                            <IconButton edge="end" aria-label="delete" onClick={() => deleteBook(book.id)}>
+                                <DeleteIcon />
+                            </IconButton>
+                        </ListItemSecondaryAction>
+                    </ListItem>
                 )
             })}
-        </div>
+        </div >
     )
 }
 
