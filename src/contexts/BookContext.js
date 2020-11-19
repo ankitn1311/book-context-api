@@ -7,8 +7,8 @@ const BookContextProvider = (props) => {
   const [books, setBooks] = useState([
     {
       id: uuidv4(),
-      title: "ankit",
-      author: "negi",
+      title: "Harry Potter",
+      author: "J. K. Rowling",
     },
   ]);
 
